@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>DEMO 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" media="screen">
+    <link rel="stylesheet" href="{% static "css/stepper.css" %}" media="screen">
+    <link rel="stylesheet" href="{% static "css/index.css" %}" media="screen">
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <img src="{% static "image/black-logo-root.svg"  %}" />
+        <div class="logout">
+           User Name: {{ user_name }}
+           <br>
+            {% if click == 0 %}
+              <form method="POST" action="test/">
+            {% else %}
+            <form method="POST">
+              {% endif %}
+              {% csrf_token %}
+              <input type="submit" class="btn btn-primary" name="button" value="Log out">
+        </div>
+        <h1 >Cours name: {{ cours_name }}</h1>
+      </div>
+    </header>
+    <div class="main">   
+    <!--stepper-->
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text">
+          <div class="mdl-stepper-horizontal-alternative">
+            {% if number_step == 0  %}
+              <div class="mdl-stepper-step active-step editable-step">
+                <div class="mdl-stepper-circle"><span> {{ number_step }} </span></div>
+                <div class="mdl-stepper-title"> <h3> {{ step_name }} </h3> </div>
+                <div class="mdl-stepper-bar-left"></div>
+                <div class="mdl-stepper-bar-right"></div>
+              </div>
+              <div class="mdl-stepper-step">
+                <div class="mdl-stepper-circle"><span> {{ next_number_step }} </span></div>
+                <div class="mdl-stepper-title"> {{ next_step_name }} </div>
+                <div class="mdl-stepper-bar-left"></div>
+                <div class="mdl-stepper-bar-right"></div>
+              </div>
+            {% endif %}
+            {% if 0 < number_step and number_step < last_step %}
+              <div class="mdl-stepper-step">
+                <div class="mdl-stepper-circle"><span> {{ prev_number_step }} </span></div>
+                <div class="mdl-stepper-title"> {{ prev_step_name }} </div>
+                <div class="mdl-stepper-bar-left"></div>
+                <div class="mdl-stepper-bar-right"></div>
+              </div>
+              <div class="mdl-stepper-step active-step editable-step">
+                <div class="mdl-stepper-circle"><span> {{ number_step }} </span></div>
+                <div class="mdl-stepper-title"> <h3> {{ step_name }} </h3></div>
+                <div class="mdl-stepper-bar-left"></div>
+                <div class="mdl-stepper-bar-right"></div>
+              </div>
+              <div class="mdl-stepper-step">
+                <div class="mdl-stepper-circle"><span>{{ next_number_step }}</span></div>
+                <div class="mdl-stepper-title"> {{ next_step_name }} </div>
+                <div class="mdl-stepper-bar-left"></div>
+                <div class="mdl-stepper-bar-right"></div>
+              </div>
+            {% endif %}
+            {% if number_step == last_step %}
+              <div class="mdl-stepper-step">
+                <div class="mdl-stepper-circle"><span> {{ prev_number_step }} </span></div>
+                <div class="mdl-stepper-title"> {{ prev_step_name }} </div>
+                <div class="mdl-stepper-bar-left"></div>
+                <div class="mdl-stepper-bar-right"></div>
+              </div>
+              <div class="mdl-stepper-step active-step editable-step">
+                <div class="mdl-stepper-circle"><span> {{ number_step }} </span></div>
+                <div class="mdl-stepper-title"> <h3> {{ step_name }} </h3></div>
+                <div class="mdl-stepper-bar-left"></div>
+                <div class="mdl-stepper-bar-right"></div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    <!-- -->
+    <!-- table of questions -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Activity (A) or Skills (S)</th>
+              <th>Like to do, Y/N</th>
+              <th>Self estimate, Grade</th>
+            </tr>
+          </thead>
+              <input type="text" name="user_name" value = {{ user_name }} hidden="false" >
+              <input type="text" name="user_id" value = {{ user_id }} hidden="false" >
+              <input type="text" name="click" value = {{ click }} hidden="false" >
+              <input type="text" name="number_step" value = {{ number_step }} hidden="false" >
+              <input type="text" name="prev_number_step" value = {{ prev_number_step }} hidden="false" >
+              <input type="text" name="next_number_step" value = {{ next_number_step }} hidden="false" >        
+          {% for question in questions %}
+          <tr>
+            <td>
+              <h4 title="{{ question.description }}" >{{ question.question_name }}</h4>
+            </td>
+            <td>
+                {% for answer in answers %}
+                  {% if answer.question_id_id == question.id %}
+                    {% if answer.answer_like == 0 %}
+                      <label class="radio-inline"><input type="radio" name = "L{{ question.id }}" value="0" checked>NO</label>
+                      <label class="radio-inline"><input type="radio" name = "L{{ question.id }}" value="1" >YES</label>
+                    {% else %}
+                      <label class="radio-inline"><input type="radio" name = "L{{ question.id }}" value="0" >NO</label>
+                      <label class="radio-inline"><input type="radio" name = "L{{ question.id }}" value="1" checked>YES</label>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {% for answer in answers %}
+                  {% if answer.question_id_id == question.id %}
+                    {% if answer.grade_id_id == 3 %}
+                      <label class="radio-inline"><input type="radio" name = "G{{ question.id }}" value="3" checked>None</label>
+                    {% else %}
+                      <label class="radio-inline"><input type="radio" name = "G{{ question.id }}" value="3" >None</label>
+                    {% endif %}
+                    {% if answer.grade_id_id == 4 %}
+                      <label class="radio-inline"><input type="radio" name = "G{{ question.id }}" value="4" checked>Beginner</label>
+                    {% else %}
+                      <label class="radio-inline"><input type="radio" name = "G{{ question.id }}" value="4" >Beginner</label>
+                    {% endif %}
+                    {% if answer.grade_id_id == 5 %}
+                      <label class="radio-inline"><input type="radio" name = "G{{ question.id }}" value="5" checked>Good</label>
+                    {% else %}
+                      <label class="radio-inline"><input type="radio" name = "G{{ question.id }}" value="5" >Good</label>
+                    {% endif %}
+                    {% if answer.grade_id_id == 6 %}
+                      <label class="radio-inline"><input type="radio" name = "G{{ question.id }}" value="6" checked>Strong</label>
+                    {% else %}
+                      <label class="radio-inline"><input type="radio" name = "G{{ question.id }}" value="6" >Strong</label>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% if number_step == 0 %} 
+          <input type="submit" class="btn btn-primary" disabled name="button" value="Previous">
+        {% else %}
+          <input type="submit" class="btn btn-primary" name="button" value="Previous">
+        {% endif %}
+        {% if number_step == last_step %} 
+          <input type="submit" class="btn btn-primary" disabled name="button" value="Next">
+        {% else %}
+          <input type="submit" class="btn btn-primary" name="button" value="Next">
+        {% endif %}  
+        </form>
+      </div>
+    <div class="footer"> SoftServe, 2019 </div>
+  </body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

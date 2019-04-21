@@ -1,0 +1,50 @@
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	margin: 0;
+	font-family: Arial;
+	background-color: #B0C4DE;
+	padding: 0px;
+}
+
+header {
+    text-align: justify;
+    letter-spacing: 1px;
+    height: 10em;
+    padding: 2em 10%;
+    background: #2c3e50;
+    color: #fff;
+    margin: 0px
+}
+
+.main{
+	flex-grow: 1;
+}
+
+h4 {
+    margin-left: 20px;
+}
+
+.btn {
+    margin: 10px;
+    margin-left: 20px;
+}
+
+.logout {
+	float:right;
+}
+
+.footer {
+	text-align: justify;
+    letter-spacing: 1px;
+    height: 3em;
+    padding: 2em 10%;
+    background: #2c3e50;
+    color: #fff;    
+    margin-top: 10px;
+}
