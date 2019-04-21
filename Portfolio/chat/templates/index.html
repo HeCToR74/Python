@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" media="screen">
+    <link rel="stylesheet" href="{% static "css/index.css" %}" media="screen">
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="logout">
+            <br>            
+            <form method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="link" value="login">              
+              {% if user_name != "" %}
+                Hi, {{ user_name }}
+                <input type="hidden" name="button_in" value="Log out">
+                <input type="submit" class="btn btn-primary" value="Log out">
+              {% else %}
+                <input type="hidden" name="button_in" value="Log in" >
+                <input type="text" name="username" style="color: black">
+                <input type="password" name="password" style="color: black">                
+                <input type="submit" class="btn btn-primary" value="Log in">
+              {% endif %}
+            </form>          
+        </div>
+        <h1 >CHAT</h1>
+      </div>
+      
+    </header>
+    <div class="main">   
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="link" value="message">
+        <input type="hidden" name="user_name" value="{{ user_name }}">        
+          <div class="input-group input-group-lg">
+            <input name="text" type="text" class="form-control" aria-describedby="sizing-addon1">
+            <span class="input-group-btn">
+              {% if user_name != "" %}
+                <button class="btn btn-default" type="submit">Sent</button>
+              {% else %}
+                <button class="btn btn-default" type="submit" disabled>Sent</button>
+              {% endif %}
+
+            </span>                
+          </div>      
+          <table class="table table-striped">
+            {% for message in messages %}
+            <tr>          
+                <td width="15%">
+                  {{ message.user_name }} wrote: 
+                </td>
+                <td width="70%">
+                  {{ message.text }}
+                </td>
+                <td width="15%">
+                  {{ message.date }}
+                </td>
+            </tr>
+            {% endfor %}          
+          </table>
+        </form>
+    </div>
+    <div class="footer"> &#169 2019 </div>
+  </body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
