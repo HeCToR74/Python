@@ -1,0 +1,2 @@
+from .departments_by_id_api_view import DepartmentsByIdAPIView
+from .departments_list_api_view import DepartmentsListAPIView
