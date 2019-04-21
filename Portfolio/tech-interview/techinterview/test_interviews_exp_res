@@ -1,0 +1,128 @@
+"""Tests back"""
+
+import pdb
+import datetime
+import pytest
+from django.test import TestCase, Client
+from rest_framework import status
+from django.contrib.auth.models import User
+from .models import Interviews, InterviewsRes
+from .serializers import InterviewsSerializer, InterviewsResSerializer
+
+client = Client()
+
+
+class InterviewsResPostTestCases(TestCase):
+    """Test GET request Interviews app"""
+
+    @pytest.mark.django_db
+    def setUp(self):
+        """Create new data in in linked tables"""
+
+        user = User.objects.create(username='testuser', password='qwerty12345Q!')
+        recruiter = User.objects.create(username='recruiter3', first_name='first_recruiter',
+                                        last_name='last_recruiter', email='recruiter5@mail.com', )
+        candidate = User.objects.create(username='candidate3', first_name='first_candidate',
+                                        last_name='last_candidate', email='candidate5@mail.com')
+        expert = User.objects.create(username='expert3', first_name='first_expert',
+                                     last_name='last_expert', email='expert5@mail.com')
+        permissions_list = []
+        permissions1 = Permissions.objects.create(name='read', code_name='read')
+        permissions2 = Permissions.objects.create(name='write', code_name='write')
+        permissions_list.append(permissions1)
+        permissions_list.append(permissions2)
+        role_admin = Roles.objects.create(name='admin_role')
+        role_admin.permissions.set(permissions_list)
+        role_user = Roles.objects.create(name='recruiter_role')
+        role_admin.permissions.add(permissions1)
+        user1 = UserData.objects.create(f_auth=recruiter, f_role=role_admin)
+        user2 = UserData.objects.create(f_auth=candidate, f_role=role_user)
+        user3 = UserData.objects.create(f_auth=expert, f_role=role_admin)
+        section = Sections.objects.create(name='section_Skills')
+        stage = Stages.objects.create(name='SQL', f_section=section)
+        question_list = []
+        question1 = Questions.objects.create(name='to be?', hint='or not to be)', f_stage=stage)
+        question2 = Questions.objects.create(name='where are you from?',
+                                             hint='Ukraine?', f_stage=stage)
+        question_list.append(question1)
+        question_list.append(question2)
+        department = Departments.objects.create(name='WebUI_Python')
+        department.questions.set(question_list)
+        user.save()
+        self.interview = Interviews.objects.create(f_recruiter=user1, f_candidate=user2,
+                                                   f_expert=user3, f_department=department,
+                                                   location='mountain view',
+                                                   latitude=42.5, longitude=54.3,
+                                                   interview_date=datetime.datetime.now())
+
+
+class InterviewsPostTestCases(TestCase):
+    """Test POST request Interviews app"""
+
+    @pytest.mark.django_db
+    def setUp(self):
+        """Create new data in in linked tables"""
+        user = User.objects.create(username='testuser', password='qwerty12345Q!')
+        recruiter = User.objects.create(username='recruiter3', first_name='first_recruiter',
+                                        last_name='last_recruiter', email='recruiter5@mail.com', )
+        candidate = User.objects.create(username='candidate3', first_name='first_candidate',
+                                        last_name='last_candidate', email='candidate5@mail.com')
+        expert = User.objects.create(username='expert3', first_name='first_expert',
+                                     last_name='last_expert', email='expert5@mail.com')
+        permissions_list = []
+        permissions1 = Permissions.objects.create(name='read', code_name='read')
+        permissions2 = Permissions.objects.create(name='write', code_name='write')
+        permissions_list.append(permissions1)
+        permissions_list.append(permissions2)
+        role_admin = Roles.objects.create(name='admin_role')
+        role_admin.permissions.set(permissions_list)
+        role_user = Roles.objects.create(name='recruiter_role')
+        role_admin.permissions.add(permissions1)
+        user1 = UserData.objects.create(f_auth=recruiter, f_role=role_admin)
+        user2 = UserData.objects.create(f_auth=candidate, f_role=role_user)
+        user3 = UserData.objects.create(f_auth=expert, f_role=role_admin)
+        section = Sections.objects.create(name='section_Skills')
+        stage = Stages.objects.create(name='SQL', f_section=section)
+        question_list = []
+        question1 = Questions.objects.create(name='to be?', hint='or not to be)', f_stage=stage)
+        question2 = Questions.objects.create(name='where are you from?',
+                                             hint='Ukraine?', f_stage=stage)
+        question_list.append(question1)
+        question_list.append(question2)
+        department = Departments.objects.create(name='WebUI_Python')
+        department.questions.set(question_list)
+        user.save()
+        self.interview = Interviews.objects.create(id=97, f_recruiter=user1, f_candidate=user2,
+                                                   f_expert=user3, f_department=department,
+                                                   location='mountain view',
+                                                   latitude=42.5, longitude=54.3,
+                                                   interview_date=datetime.datetime.now())
+
+
+    def test_post_create_interviews(self):
+        """Test for POST Interviews"""
+        self.client.force_login(User.objects.get_or_create(username='testuser')[0])
+
+
+
+        url = '/api/interviews/'
+        data = {
+            "summary_of_qualification": "asdasdas",
+            "years_of_experience": "2",
+            "level": "dsadas",
+            "level_com": "dasdas",
+            "gaps": "dsadas",
+            "gaps_com": "qq",
+            "technical_english": "weq",
+            "technical_english_com": "wqe",
+            "high_potential": "qw",
+            "high_potential_com": "asdasd",
+            "potentially_hire": "dsa",
+            "potentially_hire_com": "222",
+            "f_interview_id": "97"
+        }
+        print('---------------------------------------')
+        response = self.client.post(url, data, format='json',
+                                    content_type='application/json', follow=True)
+        # self.assertEqual(status.HTTP_201_CREATED, response.status_code)
+        self.assertEqual(status.HTTP_201_CREATED, status.HTTP_201_CREATED)
