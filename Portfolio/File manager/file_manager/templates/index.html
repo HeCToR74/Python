@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>File manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" media="screen">
+    <link rel="stylesheet" href="{% static "css/index.css" %}" media="screen">
+</head>
+<body>
+    <header>
+        <h1 >Файловий менеджер</h1>
+      </div>
+    </header>
+
+    <div class="main">
+        <form method="POST">
+            {% csrf_token %}
+            <table class="table_main">
+                <tr>
+                    <td>
+                        <div class="table">
+                            Список хостів:
+                            <select name="select" required>
+                                {% for connection in connections %}
+                                    <option value= {{ connection.id }}> {{ connection.host }} </option>
+                                {% endfor %}
+                            </select>
+                            <br>
+                            <input class="btn btn-primary" type="submit" name="button" value="Зв'язатися">
+                        </div>
+                    </td>
+                    <td>
+                        <div  class="table">
+                            <br>
+                            <input class="btn btn-primary" type="submit" name="button" value="Видалити поточний хост">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="table">
+                            <table>
+                                <tr>
+                                    <td>
+                                        Назва нового хоста:
+                                    </td>
+                                    <td>
+                                        <input name="create_host">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ім'я користувача:
+                                    </td>
+                                    <td>
+                                        <input name="create_user">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Пароль:
+                                    </td>
+                                    <td>
+                                        <input type="password" name="create_password">
+                                    </td>
+                                </tr>
+                            </table>
+                            <input class="btn btn-primary" type="submit" name="button" value="Створити">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table">
+                            <table>
+                                <tr>
+                                    <td>
+                                        Редагування хоста:
+                                    </td>
+                                    <td>
+                                        <input name="edit_host">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ім'я користувача:
+                                    </td>
+                                    <td>
+                                        <input name="edit_user">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Пароль:
+                                    </td>
+                                    <td>
+                                        <input type="password" name="edit_password"><br>
+                                    </td>
+                                </tr>
+                            </table>
+                            <input class="btn btn-primary" type="submit" name="button" value="Оновити">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="tree">
+                            Поточний каталог сервера:
+                            <br>
+                            {% for item in data %}
+                            <br> <b>{{ item }}</b>
+                            {% endfor %}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="table">
+                            Вкажіть адресу на Вашому компютері для завантаження файлу та ім'я файлу,
+                            <br> наприклад 'C:\\TEMP\\filename.txt' :</br>
+                            <input name="path_save">
+                            <br>
+                            Виберіть ім'я файлу для завантаження,
+                            <br> або ім'я каталогу для переходу:</br>
+                            <select name="filename">
+                                {% for item in data %}
+                                    <option value= {{item }}> {{ item }} </option>
+                                {% endfor %}
+                            </select>
+                            <br>
+                            <input type="hidden" name="path" value="{{ path }}">
+                            <input class="btn btn-primary" type="submit" name="button" value="Завантажити/Перейти">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+    </div>
+
+    <div class="footer"> &#169 2019 </div>
+</body>
+</html>
