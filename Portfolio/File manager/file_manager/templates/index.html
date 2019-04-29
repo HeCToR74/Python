@@ -103,31 +103,26 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <div class="tree">
-                            Поточний каталог сервера:
-                            <br>
-                            {% for item in data %}
-                            <br> <b>{{ item }}</b>
-                            {% endfor %}
-                        </div>
-                    </td>
-                    <td>
+                    <td colspan="2">
                         <div class="table">
-                            Вкажіть адресу на Вашому компютері для завантаження файлу та ім'я файлу,
-                            <br> наприклад 'C:\\TEMP\\filename.txt' :</br>
-                            <input name="path_save">
-                            <br>
-                            Виберіть ім'я файлу для завантаження,
-                            <br> або ім'я каталогу для переходу:</br>
-                            <select name="filename">
-                                {% for item in data %}
-                                    <option value= {{item }}> {{ item }} </option>
-                                {% endfor %}
-                            </select>
-                            <br>
-                            <input type="hidden" name="path" value="{{ path }}">
-                            <input class="btn btn-primary" type="submit" name="button" value="Завантажити/Перейти">
+                            <div>
+                                Поточний каталог сервера: <b>{{ path }}</b>
+                                <br>
+                                Вкажіть адресу на Вашому компютері для завантаження файлу та ім'я файлу,
+                                <br> наприклад 'C:\\TEMP\\filename.txt' :
+                                <input name="path_save">
+                                <br>
+                                Виберіть ім'я файлу для завантаження,
+                                <br> або ім'я каталогу для переходу:
+                                <select name="filename">
+                                    {% for item in data %}
+                                        <option value= {{item }}> {{ item }} </option>
+                                    {% endfor %}
+                                </select>
+                                <br>
+                                <input type="hidden" name="path" value="{{ path }}">
+                                <input class="btn btn-primary" type="submit" name="button" value="Завантажити/Перейти">
+                            </div>
                         </div>
                     </td>
                 </tr>
