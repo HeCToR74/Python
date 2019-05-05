@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Тестове завдання</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" media="screen">
+    <link rel="stylesheet" href="{% static "css/stepper.css" %}" media="screen">
+    <link rel="stylesheet" href="{% static "css/index.css" %}" media="screen">
+  </head>
+  <body>
+    <header>
+      <div class="header">
+          <h2> Дані користувача</h2>
+          Ім'я користувача: {{ client_info.name }}
+          <br>
+          Назви магазинів мережі користувача:
+          <br>
+          {% for key, value in client_info.shops.items %}
+            {{ value }},
+          {% endfor %}
+          <br>
+          Дата реєстрації першого чеку користувача в мережі: {{ client_info.date_from }}
+          <br>
+          Дата реєстрації останнього чеку користувача в мережі: {{ client_info.date_to }}
+      </div>
+    </header>
+
+    <div class="main">
+        <div class="table">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Показник</th>
+                  <th>18-11-2015</th>
+                  <th>17-11-2015</th>
+                  <th>Різниця в %</th>
+                  <th>Різниця</th>
+                </tr>
+              </thead>
+                <tr>
+                    <td> Оборот </td>
+                    <td> {{ data.data_indicator.data_turnover.turnover_to }} </td>
+                    <td> {{ data.data_indicator.data_turnover.turnover_from }} </td>
+                    <td> {{ data.data_indicator.data_turnover.turnover_percentage }}</td>
+                    <td> {{ data.data_indicator.data_turnover.turnover_difference }}</td>
+                </tr>
+                <tr>
+                    <td> Кількість товарів </td>
+                    <td> {{ data.data_indicator.data_qty.qty_to }} </td>
+                    <td> {{ data.data_indicator.data_qty.qty_from }} </td>
+                    <td> {{ data.data_indicator.data_qty.qty_percentage }}</td>
+                    <td> {{ data.data_indicator.data_qty.qty_difference }}</td>
+                </tr>
+                <tr>
+                    <td> Кількість чеків </td>
+                    <td> {{ data.data_indicator.data_receipts_qty.receipts_qty_to }} </td>
+                    <td> {{ data.data_indicator.data_receipts_qty.receipts_qty_from }} </td>
+                    <td> {{ data.data_indicator.data_receipts_qty.receipts_qty_percentage }}</td>
+                    <td> {{ data.data_indicator.data_receipts_qty.receipts_qty_difference }}</td>
+                </tr>
+                <tr>
+                    <td> Середній чек </td>
+                    <td> {{ data.data_indicator.data_average_check.average_check_to }} </td>
+                    <td> {{ data.data_indicator.data_average_check.average_check_from }} </td>
+                    <td> {{ data.data_indicator.data_average_check.average_check_percentage }}</td>
+                    <td> {{ data.data_indicator.data_average_check.average_check_difference }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <div class="table">
+                <h4 style="text-align:  center;"> Товари, які виросли в продажах </h4>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>ID товару</th>
+                      <th>Зміна кількості продаж</th>
+                      <th>Зміна обороту</th>
+                    </tr>
+                  </thead>
+                    {% for item in data.grow_sales %}
+                        <tr>
+                            <td> {{ item.0 }} </td>
+                            <td> {{ item.1 }}</td>
+                            <td> {{ item.2 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div>
+            <div class="table">
+                <h4 style="text-align:  center;"> Товари, які впали в продажах </h4>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>ID товару</th>
+                      <th>Зміна кількості продаж</th>
+                      <th>Зміна обороту</th>
+                    </tr>
+                  </thead>
+                    {% for item in data.fell_sales %}
+                        <tr>
+                            <td> {{ item.0 }} </td>
+                            <td> {{ item.1 }}</td>
+                            <td> {{ item.2 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="footer"> Datawiz, 2019 </div>
+  </body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

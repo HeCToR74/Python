@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+	    <title>Тестове завдання</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="stylesheet" href="{% static "css/login.css" %}" media="screen">
+	</head>
+	<body>
+		<div class="login">
+			<div class="login-screen">
+				<div class="app-title">
+					<h1>Login</h1>
+				</div>
+				<form method="POST">
+					{% csrf_token %}
+					<div class="login-form">
+						<div class="control-group">
+							<input type="text" class="login-field" value="" placeholder="login" name="login"  id="login-name">
+							<label class="login-field-icon fui-user" for="login-name"></label>
+						</div>
+					<div class="control-group">
+						<input type="password" class="login-field" value="" placeholder="password" name="password" id="login-pass">
+						<label class="login-field-icon fui-lock" for="login-pass"></label>
+					</div>
+					<input class="btn btn-primary btn-large btn-block" type = "submit" value ="Login" >
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
