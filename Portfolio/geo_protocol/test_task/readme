@@ -1,0 +1,6 @@
+py manage.py runserver
+redis-server
+celery -A celery_balance worker --loglevel=info
+celery -A celery_balance beat --loglevel=info
+python celery_balance.py
+

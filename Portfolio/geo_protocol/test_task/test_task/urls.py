@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from account_balance.views import ActionView, CustomerView, CustomerViewId
+from account_balance.views import ActionView, CustomerView, CustomerViewId, BalanceView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/actions/', ActionView.as_view()),
     path('api/customeres/', CustomerView.as_view()),
     path('api/customeres/<int:pk>', CustomerViewId.as_view()),
+    path('api/balance_records/', BalanceView.as_view()),
 
 ]

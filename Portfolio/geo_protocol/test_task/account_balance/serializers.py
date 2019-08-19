@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Action, Customer
+from .models import Action, Customer, Balance
 from datetime import datetime
 
 class ActionSerializer(serializers.Serializer):
@@ -24,3 +24,9 @@ class CustomerSerializer(serializers.Serializer):
         instance.save()
         return instance
 
+class BalanceSerializer(serializers.Serializer):
+    date = serializers.DateTimeField(default=datetime.now())
+    balance = serializers.IntegerField()
+
+    def create(self, validated_data):
+        return Balance.objects.create(**validated_data)

@@ -17,3 +17,6 @@ class Action(models.Model):
     def __str__(self):
         return Customer.objects.get(id=self.name.id).name + ' (' + str(self.date) +')'
 
+class Balance(models.Model):
+    date = models.DateTimeField(default=datetime.now(), blank=True)
+    balance = models.IntegerField()
