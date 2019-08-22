@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a771f73b-ff63-475c-bb18-a070486c8a5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_task/account_balance/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/test_task/account_balance/celerybeat-schedule.dat" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,13 +13,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_task/account_balance/celery_balance.py">
+        <entry file="file://$PROJECT_DIR$/test_task/test_task/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="35" column="12" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -41,6 +37,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test_task/account_balance/urls.py" />
+        <option value="$PROJECT_DIR$/test_task/account_balance/admin.py" />
         <option value="$PROJECT_DIR$/test_task/account_balance/task.py" />
         <option value="$PROJECT_DIR$/test_task/account_balance/tasks.py" />
         <option value="$PROJECT_DIR$/test_task/account_balance/celery.py" />
@@ -49,17 +46,16 @@
         <option value="$PROJECT_DIR$/test_task/test_task/__init__.py" />
         <option value="$PROJECT_DIR$/test_task/readme" />
         <option value="$PROJECT_DIR$/test_task/account_balance/tests.py" />
-        <option value="$PROJECT_DIR$/test_task/account_balance/serializers.py" />
-        <option value="$PROJECT_DIR$/test_task/test_task/urls.py" />
-        <option value="$PROJECT_DIR$/test_task/account_balance/celery_balance.py" />
         <option value="$PROJECT_DIR$/test_task/test_task/settings.py" />
         <option value="$PROJECT_DIR$/test_task/account_balance/models.py" />
-        <option value="$PROJECT_DIR$/test_task/account_balance/admin.py" />
+        <option value="$PROJECT_DIR$/test_task/account_balance/serializers.py" />
         <option value="$PROJECT_DIR$/test_task/account_balance/views.py" />
+        <option value="$PROJECT_DIR$/test_task/test_task/urls.py" />
+        <option value="$PROJECT_DIR$/test_task/account_balance/celery_balance.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="1346" />
     <option name="height" value="418" />
@@ -70,6 +66,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -86,23 +83,16 @@
               <item name="geo_protocol" type="b2602c69:ProjectViewProjectNode" />
               <item name="geo_protocol" type="462c0819:PsiDirectoryNode" />
               <item name="test_task" type="462c0819:PsiDirectoryNode" />
-              <item name="account_balance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="geo_protocol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="geo_protocol" type="462c0819:PsiDirectoryNode" />
-              <item name="test_task" type="462c0819:PsiDirectoryNode" />
               <item name="test_task" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test/celery_blog.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -135,9 +125,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18601191" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -148,7 +138,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.72842264" visible="true" weight="0.14869282" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.72842264" visible="true" weight="0.1388889" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.2715774" side_tool="true" weight="0.3970588" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32843137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -156,7 +146,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19568452" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16071428" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -167,7 +157,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.72842264" visible="true" weight="0.08986928" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.72842264" visible="true" weight="0.24836601" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.2715774" side_tool="true" weight="0.3970588" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32843137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -180,6 +170,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-921">
           <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_task/account_balance/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -212,37 +212,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../test/celery_blog.py" />
-    <entry file="file://$PROJECT_DIR$/test_task/account_balance/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_task/account_balance/celerybeat.pid" />
-    <entry file="file://$PROJECT_DIR$/test_task/test_task/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1234">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_task/test_task/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="30" />
-          <folding>
-            <element signature="e#633#665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_task/account_balance/celerybeat-schedule.dir">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_task/account_balance/celerybeat-schedule.bak">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_task/account_balance/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -253,27 +222,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_task/readme">
+    <entry file="file://$PROJECT_DIR$/test_task/account_balance/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-end-line="4" selection-end-column="24" />
+        <state relative-caret-position="17">
+          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_task/account_balance/admin.py">
+    <entry file="file://$PROJECT_DIR$/test_task/account_balance/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="242">
+          <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="28" selection-end-column="11" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_task/account_balance/celerybeat.pid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_task/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-end-line="3" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_task/test_task/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="30" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_task/account_balance/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="6" selection-end-line="13" />
+        <state relative-caret-position="323">
+          <caret line="49" column="50" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="50" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
@@ -282,31 +275,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_task/account_balance/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="221">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="54" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_task/account_balance/serializers.py">
+    <entry file="file://$PROJECT_DIR$/test_task/account_balance/celery_balance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="16" />
+        <state relative-caret-position="119">
+          <caret line="14" column="96" selection-start-line="14" selection-start-column="96" selection-end-line="14" selection-end-column="96" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_task/account_balance/celery_balance.py">
+    <entry file="file://$PROJECT_DIR$/test_task/test_task/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
         </state>
       </provider>
     </entry>
