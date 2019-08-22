@@ -1,0 +1,13 @@
+Test task data analyst
+
+The given dataset contains information about companies that used or did not use cloud services. 
+'Usage of cloud services' variable is a binary variable , 0 = not used, 1= used. 
+The binary variable is present for every year, and captures whether company used services in given year. 
+Other variables are business and financial indicators of the company.
+
+Task:
+1. Explore and visualize dataset, explore correlations
+2. Create regressions for each year in the form year= variables, to explore what is probability that company uses cloud in this year
+3. (Optional) Find any other interesting patterns with the tool of your choise
+
+All should be done in python notebook, clear code and comments will be beneficial

@@ -3,3 +3,5 @@ from .models import Customer, Action
 
 admin.site.register(Customer)
 admin.site.register(Action)
+
+
