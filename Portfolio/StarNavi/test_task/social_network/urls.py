@@ -3,5 +3,7 @@ from .views import PostView, UserView
 
 urlpatterns = [
     path('posts/', PostView.as_view()),
+    path('posts/<int:pk>', PostView.as_view()),
     path('users/', UserView.as_view()),
+
 ]

@@ -1,0 +1,34 @@
+¬икористовуючи Django Rest Framework, створити Rest API дл€ системи пропуск≥в на
+п≥дприЇмств≥.
+—труктура бази даних:
+enter:
+id Ц PK
+date Ц datetime
+user Ц FK (user)
+room Ц FK (room)
+room:
+id Ц PK
+name Ц char
+key:
+id Ц PK
+key Ц char (index)
+user Ц FK (user)
+expired Ц datetime
+active Ц boolean
+permission
+room Ц FK (room)
+user Ц FK (user)
+
+≈ндпо≥нти:
+ƒл€ ус≥х користувач≥в:
+POST /enter/<str:key>/<int:room_id>/ - вх≥д.
+¬≥дпов≥дь: сер≥ал≥зований обТЇкт модел≥ enter або 403, €кщо немаЇ доступу (key.active = true, current
+date < key.expired, а також перев≥р€ти чи ≥снуЇ обТЇкт permission)
+ƒл€ адм≥н≥стратор≥в:
+GET /enter/<str:key>/list/ - список вход≥в (сер≥ал≥зованих обТЇкт≥в модел≥ Enter).
+POST /permission/<str:key>/<room_id>/<str:<user_key>/<int:room_id>/ - надати доступ користувачу
+(створенн€ обТЇкта permission)
+POST /permission/<str:key>/<room_id>/<str:<user_key>/<int:room_id>/remove/ - вилучити доступ
+користувачу (вилученн€ обТЇкта permission)
+јвторизац≥ю по ключу (перев≥р€ти зм≥нну key в ендпо≥нт≥ з обТЇктом key.key) написати за
+допомогою кастомного Middleware
