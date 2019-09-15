@@ -17,5 +17,5 @@ from django.contrib import admin
 from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('social_network.urls')),
+    path('api/v1/', include('social_network.urls')),
 ]

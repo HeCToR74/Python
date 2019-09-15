@@ -50,7 +50,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+    #'test_task.middleware.key_middleware.KeyMiddleware',
+    
+    ]
+
 
 ROOT_URLCONF = 'test_task.urls'
 
