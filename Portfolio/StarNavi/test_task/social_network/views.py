@@ -9,11 +9,11 @@ from django.http import HttpResponseForbidden
 
 
 class PostView(APIView):
-    def get(self, request):
-        print(request.user)
-        posts = Post.objects.all()
-        serializer = PostSerializer(posts, many=True)
-        return Response({"posts": serializer.data})
+    # def get(self, request):
+    #     print(request.user)
+    #     posts = Post.objects.all()
+    #     serializer = PostSerializer(posts, many=True)
+    #     return Response({"posts": serializer.data})
 
     def post(self, request):
         post = request.data.get('post')  
