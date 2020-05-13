@@ -1,0 +1,63 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}&mdash;Pizza</title>
+    <link href="{% static 'pizza/style3.css' %}" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="main">
+        <div class="left-side">
+            <div class="stay-put">
+                {% block left_side %}
+                    <ul>
+                        <li>
+                            <a href="{% url 'build_pizza' %}">Build a Pizza</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'show_tab' %}">Show Tab</a>
+                        </li>
+                        <li>
+                            <a href="{% url  'select_user' %}">Select User</a>
+                        </li>
+                        {% comment %}
+                        <li>
+                            <a href="{% url 'big_spenders' %}">Big Spenders</a>
+                        </li>
+                        {% endcomment %}
+                    </ul>
+                {% endblock %}
+            </div>
+        </div>
+        <div class="content">
+            {% block content %}
+                content
+            {% endblock %}
+        </div>
+        <div class="right-side">
+            {% block right_side %}
+            <!-- FIXED -->
+            <!-- 
+                  <p>
+                    The two keys we store in a session are
+                    <code>built</code> and <code>tab</code>.
+                    The values will be displayed here:
+                </p>
+                <p>
+                    built: {{ request.session.built }}
+                </p>
+                <p>
+                    tab: {{ request.session.tab }}
+                </p>
+            -->
+
+
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
