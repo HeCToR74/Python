@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistic</title>
+</head>
+<body>
+    <div>
+        <h2>Hi, {{user}} </h2>
+    </div>
+
+    <div>
+        <table>
+            <tr>
+                <td>Total number of products entered by user</td>
+                <td>{{ tnpu }}</td>
+            </tr>
+            <tr>
+                <td>The total number of products that was entered in the system</td>
+                <td>{{ tnpa }}</td>
+            </tr>
+            <tr>
+                <td>The maximum price entered by the user</td>
+                <td>{{ max_price }}</td>
+            </tr>
+            <tr>
+                <td>The average price of all products of all users</td>
+                <td>{{ average_price }}</td>
+            </tr>
+            <tr>
+                <td>The sum of the prices of all products that the user entered</td>
+                <td>{{ sum_price }}</td>
+            </tr>
+            <tr>
+                <td>The sum of all products that the user entered AND whose name is longer than 3 characters OR whose
+                    price is more than 50, regardless of who created them</td>
+                <td>{{ sum_select_price }}</td>
+            </tr>
+        </table>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="submit" name="price" value="To raise the price" >
+        </form>
+
+    </div>
+
+</body>
+</html>

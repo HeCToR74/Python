@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+    <div>
+        <h2>Hi, {{user}} </h2>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit" name="cart" value="Add to cart" >
+    </form>
+</body>
+</html>
