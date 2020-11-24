@@ -1,0 +1,30 @@
+Data Analyst Assignment
+
+The test
+Assume that the attached data was retrieved from an actual website serving our business (it is not, 
+but anyway). Provide some observations and suggestions that would help to advance the business.
+The environment
+Visitors visit our webpage. The page contains a section which shows cards with testimonials of our 
+clients. In total we have X (~100) testimonials but the page displays a small number of cards, 
+selected randomly for each visitor. The visitors may or may not view the testimonials section. 
+Eventually, visitors leave the page by either clicking on something, or by closing the page. 
+Some of these outcomes are more positive than others from a business perspective.
+The data
+The data is a collection of JSON objects where each object represents an event and has the following 
+fields:
+
+●	The type of the event
+●	The timestamp of the event. Assume that this field has no impact on anything
+●	A unique visitor id (there is no record that allows to identify returning visitors)
+●	Optionally additional data that describes the event (feel free to ask if you need more 
+details on specific events)
+
+To download the JSON file click here
+https://drive.google.com/file/d/1EHcOxSAmau5bPp-Rfmkm_ObUQndEjmfx/view
+
+
+
+Should you have any questions, please send an email to hr@bookmap.com with the title Data Analyst 
+Test Feedback
+
+Bookmap HR
