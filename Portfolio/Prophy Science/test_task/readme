@@ -1,0 +1,3 @@
+Для коректної роботи потрібно становити залежності та виконати команду:
+
+python -c "import nltk; nltk.download('stopwords')"
