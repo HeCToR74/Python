@@ -1,21 +1,25 @@
 ¬икористовуючи Django Rest Framework, створити Rest API дл€ системи пропуск≥в на
 п≥дприЇмств≥.
 —труктура бази даних:
+
 enter:
 id Ц PK
 date Ц datetime
 user Ц FK (user)
 room Ц FK (room)
+
 room:
 id Ц PK
 name Ц char
+
 key:
 id Ц PK
 key Ц char (index)
 user Ц FK (user)
 expired Ц datetime
 active Ц boolean
-permission
+
+permission:
 room Ц FK (room)
 user Ц FK (user)
 
