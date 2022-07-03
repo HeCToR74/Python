@@ -25,7 +25,7 @@ django-rest-auth==0.9.3
 django-rest-knox==3.6.0
 django-rest-passwordreset==0.9.7
 django-seed==0.1.9
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 djangorestframework-stubs==0.4.1
 docutils==0.14
